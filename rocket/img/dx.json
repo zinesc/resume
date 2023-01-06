@@ -1,0 +1,31 @@
+{
+	"frames": {
+        "frame_1.png": {"x": 0, "y": 0, 
+			"w": 400, "h": 400 },
+        "frame_2.png": {"x": 400, "y": 0, 
+			"w": 400, "h": 400 },
+        "frame_3.png": {"x": 800, "y": 0, 
+			"w": 400, "h": 400 },
+        "frame_4.png": {"x": 1200, "y": 0, 
+			"w": 400, "h": 400 },
+        "frame_5.png": {"x": 0, "y": 400, 
+			"w": 400, "h": 400 },
+        "frame_6.png": {"x": 400, "y": 400, 
+			"w": 400, "h": 400 },
+        "frame_7.png": {"x": 800, "y": 400, 
+			"w": 400, "h": 400 },
+        "frame_8.png": {"x": 1200, "y": 400, 
+			"w": 400, "h": 400 }
+	},
+	
+	"animations": {
+		"explode": ["frame_1.png", "frame_2.png", "frame_3.png", "frame_4.png", "frame_5.png", "frame_6.png", "frame_7.png", "frame_8.png"]
+	},
+	
+	"meta": {
+		"image": "dx.png",
+		"format": "RGBA8888",
+		"size": {"w":1600,"h":800},
+		"scale": "1"
+	}
+}
