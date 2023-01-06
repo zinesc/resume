@@ -1,0 +1,528 @@
+<!doctype html>
+<html>
+<head>
+	<title>Fullstack Web Developer</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACqElEQVQ4T42TS2hUdxTGf+e+ZyaZSUxiYoxenWZmosYkI0MVxQciiBrRRRRFSkFaV+LCCrUIJeC2dCOlmOhChC66ce9rqVINLZggvqIhCercsUk0k8zkzty/JFgfraGe/ffjO9/5jvCZ8zgej0XL1i6F2irQocBVmkTl//Te4pakMtT3iDooIiHqFVqDgpgCB+YFqKamUE4PnxaRYyqGqaUD9FQJCSkwDDTHQkzj04BsUzwhunEJW1bJ+gCjzUcLWVj11Rg1UfSw/c74fxxk3eY06JdZSK3ZWUKrEWy3Hqu+irEZuOX5DEyUGZ0KeOWrjx1km75oFsO4wWLqzD0zGLVhQqkljCud34eK3Mz5zJRsxicbyBer8UvOe8Dszp4e+YM6Wq39M5gNlXPi23+XOfeowNh0hGFvNbnXSxGlUYVOBP09wHOTPylb+8445GMucYisWsbVFyUuDhZ4Npbg6Ys0UWXRRojl2FhvpXMZePGWJIHqly2BaWYCKtIJ+l7BmfvTDGXbGXm5kjWESRNCQ/oDVE85kOuB2E/mADk3dT6oksPW10WcRCP56ip++DPPYK6ZJ88zbKKCJE5BFCcKjf2/dnd3B/+cQWYbVhkYz7TNKmStFSoyCXofFbkyYvPX4E7aVSUZwoUA1Xnq7L5r/y6eeMsSB5Vov5lHfJxUHVMLazneN8n90XUUJ5rpmo1LydGTPV2/fKq14rnJXrVIvrEPFIl0JLgyrnHhccCdh3vZoGK04NwtLurv+ND2hyDx3NRt6VAZc1uZ6NoV/HxvmqtDjTwY3cBXLMBEjp06u+/MfD8jWTeV07aoGnujQUV7nON38vQNt5J/2UYX1fgBrT/2dg3MC/DclC/bA8NZP3t7l29vTjIw8iXmRIodxCgqO9Lds3tqPsAbFPDsXnMT4pgAAAAASUVORK5CYII="/>
+</head>
+<body>
+
+	<style>
+		/*--normalize--*/
+		*{box-sizing:border-box} *:focus{outline:none} [hidden]{display:none!important} img{max-width:100%}
+		body{margin:0} input,textarea,button{font:inherit;color:inherit;background:none;}
+		/*--customize--*/
+		html { overflow-y: scroll; overflow-x:hidden; font:16px/26px segoe ui, tahoma; color:#283046; fill:#283046; }
+		container { display:block; width:1200px; max-width:100%; padding:0 20px; margin:0 auto; position: relative; z-index: 1; }
+		nav { min-height:10px; line-height:40px; background:#283046; color:#fff; position:absolute; top:0; left:0; right:0; }
+		footer { margin:0; background:#283046; color:rgba(255,255,255,0.65); padding:0 0 20px 0; }
+		/*--controls--*/
+		a:link { display:inline-block; }  a:link:hover { text-decoration:none; }
+		article { margin:2em 0 120px 0; }
+		article a img { box-shadow:0 8px 30px #cacaca; border-radius:20px; }
+		/*--typography--*/
+		h1 { margin:1rem 0 1rem 0; font-size:30px; font-weight:800; }
+		h2 { margin:0rem 0 1rem 0; font-size:20px; font-weight:700; }
+		h5 { margin:0rem 0 1rem 0; font-size:inherit; font-weight:700; color:#89a; }
+		ul { margin:0; padding:0 0 0 1.2em; }
+		b.label { font-weight:800; font-size:11px; text-transform:uppercase; display:inline-block; }
+		.label-given { color:rgb(22, 150, 101); }
+		.js-row { color: #08f; }
+		/*--colors--*/
+		.c2 { color:#777 }
+		.c4 { color:#283046 }
+		@media (min-width:900px) {
+			.flyright-lg { float:right; }
+			article > aside { width:55%; display:inline-block; margin-right:-5px; vertical-align:top; }
+			article > main { width:45%; display:inline-block; margin-right:-5px; vertical-align:top; padding-left:2em; }
+			html1 { background:url(matrix.jpg) repeat-y; }
+		}
+	</style>
+	
+	<svg viewBox="0 0 1440 320" preserveAspectRatio="none" 
+			style="width:100%; height:38px; display:block; transform:scale(1, -1); margin-top:-1px; position: relative; z-index: 1;">
+		
+			<path fill-opacity="1" d="M0,320L7.3,314.7C14.5,309,29,299,44,256C58.2,213,73,139,87,138.7C101.8,139,116,213,131,213.3C145.5,213,160,139,175,128C189.1,117,204,171,218,186.7C232.7,203,247,181,262,197.3C276.4,213,291,267,305,256C320,245,335,171,349,128C363.6,85,378,75,393,74.7C407.3,75,422,85,436,85.3C450.9,85,465,75,480,85.3C494.5,96,509,128,524,165.3C538.2,203,553,245,567,250.7C581.8,256,596,224,611,213.3C625.5,203,640,213,655,208C669.1,203,684,181,698,165.3C712.7,149,727,139,742,133.3C756.4,128,771,128,785,128C800,128,815,128,829,149.3C843.6,171,858,213,873,197.3C887.3,181,902,107,916,90.7C930.9,75,945,117,960,144C974.5,171,989,181,1004,197.3C1018.2,213,1033,235,1047,234.7C1061.8,235,1076,213,1091,202.7C1105.5,192,1120,192,1135,192C1149.1,192,1164,192,1178,202.7C1192.7,213,1207,235,1222,250.7C1236.4,267,1251,277,1265,261.3C1280,245,1295,203,1309,197.3C1323.6,192,1338,224,1353,197.3C1367.3,171,1382,85,1396,48C1410.9,11,1425,21,1433,26.7L1440,32L1440,320L1432.7,320C1425.5,320,1411,320,1396,320C1381.8,320,1367,320,1353,320C1338.2,320,1324,320,1309,320C1294.5,320,1280,320,1265,320C1250.9,320,1236,320,1222,320C1207.3,320,1193,320,1178,320C1163.6,320,1149,320,1135,320C1120,320,1105,320,1091,320C1076.4,320,1062,320,1047,320C1032.7,320,1018,320,1004,320C989.1,320,975,320,960,320C945.5,320,931,320,916,320C901.8,320,887,320,873,320C858.2,320,844,320,829,320C814.5,320,800,320,785,320C770.9,320,756,320,742,320C727.3,320,713,320,698,320C683.6,320,669,320,655,320C640,320,625,320,611,320C596.4,320,582,320,567,320C552.7,320,538,320,524,320C509.1,320,495,320,480,320C465.5,320,451,320,436,320C421.8,320,407,320,393,320C378.2,320,364,320,349,320C334.5,320,320,320,305,320C290.9,320,276,320,262,320C247.3,320,233,320,218,320C203.6,320,189,320,175,320C160,320,145,320,131,320C116.4,320,102,320,87,320C72.7,320,58,320,44,320C29.1,320,15,320,7,320L0,320Z"></path>
+	</svg>
+
+	<container>
+	
+		<article>
+			<center>
+				<p> Алексей Вишневский </p>
+				<h1> Fullstack Web Developer </h1>
+				<h3> Стэк: Laravel + VueJS </h3>
+				<h5>  Опыт: 12 лет &nbsp; &bull; &nbsp; Telegram: @hitokis </h5>
+			</center>
+			
+			<ul style="max-width:750px; margin:auto;">
+			
+				<li> <b class="label">Возраст:</b>
+						37
+				</li>
+				<li> <b class="label">Локация:</b>
+						Новосибирск (Москва+4, UTC+7)
+				</li>
+				<li> <b class="label">Образование:</b>
+						НГУ, степень магистра,
+						Физический факультет, кафедра программирования (АФТИ)
+				</li>
+				<li> <b class="label">Английский:</b>
+						Свободный разговорный и письменный
+				</li>
+				<li> <b class="label">Основная специализация:</b>
+						Проектирование архитектуры и создание проектов с нуля.
+				</li>
+				<li> <b class="label">BackEnd Stack:</b>
+						Laravel <!--, <a href="https://torsion.website"> TorsionPHP </a>-->
+				</li>
+				<li> <b class="label">FrontEnd Stack:</b>
+						VueJS, PixiJS, ThreeJS, VanillaJS
+				</li>
+				<li> <b class="label">Верстка:</b>
+						SCSS, BEM, SVG Sprites
+				</li>
+				
+				<li> <b class="label">Администрирование Linux:</b>
+						Ubuntu 20.04 VPS (Apache2, PHP 7.4, Certbot)
+				</li>
+				
+				<li> <b class="label">Оплата:</b>
+						Карта РФ
+				</li>
+				<li> <b class="label">Рейт:</b>
+						1200 р./час
+				</li>
+				<li> <b class="label">Email:</b>
+						ahavoo@gmail.com
+				</li>
+
+				<!--
+					<li> <b class="label">Работаю:</b>
+					</li>
+				-->
+				<li> <b class="label">Оплата:</b>
+						поэтапная пост-оплата
+				</li>
+				<li> <b class="label">Telegram:</b>
+						@hitokis
+						<a href="https://t.me/hitokis"> https://t.me/hitokis </a>
+				</li>
+				
+				<p></p>
+				<!--center>
+					<h5>
+						PHP7 &bull; MySql &bull; Sqlite3 &bull; RestAPI &bull; HTML5 &bull; CSS3 &bull; JavaScript &bull; GIT
+						<br>
+						Проектирование архитектуры систем
+					</h5>
+				</center-->
+				<center>
+					<h5>
+						Портфолио:
+					</h5>
+				</center>
+			</ul>
+		</article>
+		
+		<style>
+			.project__box {
+				display: flex;
+			}
+			.project__screens {
+				display: flex;
+			}
+			.project__imgbtn {
+				margin-right: 15px;
+			}
+		</style>
+		
+		<article class="project__box" id="wirelessmenu">
+			<aside class="project__screens">
+				<a class="project__imgbtn" href="flightmap.png"> <img src="flightmap.png"> </a>
+			</aside>
+			<main>
+				<h2> FlightMap &mdash; карта авиаперелётов </h2>
+				<h5> Задача: По макетам из Figma создать интерактивную карту авиаперелётов для авиакомпании RedWings </h5>
+				<ul>
+					<li class="label-given"> <b class="label">Дано:</b> дизайн Figma </li>
+					<li class="js-row"> <b class="label ">JS Framework:</b> Vanilla JS + Leaflet JS </li>
+					<li> <b class="label">Сделано:</b> Выбор провайдера интерактивных карт Google/Yandex/OSM</li>
+					<li> <b class="label">Сделано:</b> Три прототипа Google/Yandex/OSM - для теста производительности </li>
+					<li> <b class="label">Сделано:</b> Программирование интерактивной карты на Leaflet JS </li>
+					<li> <b class="label">Результат:</b> 
+						<a href="https://flyredwings.com/flight-map/"> https://flyredwings.com/flight-map/ </a>
+					</li>
+				</ul>
+			</main>
+		</article>
+		
+		<article class="project__box" id="wirelessmenu">
+			<aside class="project__screens">
+				<a class="project__imgbtn" href="19-wrmenu-1.png"> <img src="19-wrmenu-1.png"> </a>
+				<a class="project__imgbtn" href="19-wrmenu-2.png"> <img src="19-wrmenu-2.png"> </a>
+				<a class="project__imgbtn" href="19-wrmenu-3.png"> <img src="19-wrmenu-3.png"> </a>
+			</aside>
+			<main>
+				<h2> WirelessMenu &mdash; меню ресторана в мобильном телефоне </h2>
+				<h5> Задача: По макетам из Figma создать MVP с 3-мя ролями пользователей:
+					посетитель, официант, администратор </h5>
+				<ul>
+					<li class="label-given"> <b class="label">Дано:</b> дизайн Figma </li>
+					<li class="js-row"> <b class="label ">JS Framework:</b> Vanilla JS + Leaflet JS </li>
+					<li> <b class="label">Сделано:</b> Проектирование базы данных</li>
+					<li> <b class="label">Сделано:</b> Программирование Front-End, JS </li>
+					<li> <b class="label">Сделано:</b> Программирование Back-End, PHP7 </li>
+					<li> <b class="label">Создана:</b> CMS для управления системой </li>
+					<li> <b class="label">Настроен:</b> VPS Ubuntu 20.04 </li>
+					<li> <b class="label">Настроено:</b> Авто-развёртывание GitLab &rarr; VPS </li>
+					<li> <b class="label">Лендинг:</b> <a href="https://wireless.menu/">https://wireless.menu/</a> </li>
+					<!--
+					<li> <b class="label">Демо:</b> <a href="https://restaurant.wireless.menu/">https://restaurant.wireless.menu/</a> - только для телефонов </li>
+					-->
+				</ul>
+			</main>
+		</article>
+		
+		<article id="finber">
+			<aside> <a href="18-finber.png"> <img src="18-finber.png"> </a> <p></p> </aside>
+			<main>
+				<h2> Finber &mdash; Проверка контрагентов </h2>
+				<h5> Задача: создать сайт для поиска контрагентов с идеальным SEO </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> брифинг, дизайн Figma </li>
+					<li class="js-row"> <b class="label ">JS Framework:</b> No JS </li>
+					<li> <b class="label">Сделано:</b> Проектирование базы данных Sqlite для 25 000 000 записей</li>
+					<li> <b class="label">Сделано:</b> Поиск по ИНН, названию </li>
+					<li> <b class="label">Сделано:</b> Настройка выделенного сервера Ubuntu 20.04 </li>
+					<li> <b class="label">Сделано:</b> Программирование Front-End, JS </li>
+					<li> <b class="label">Сделано:</b> Программирование Back-End, PHP7 </li>
+					<li> <b class="label">Сделано:</b> Оптимизация базы данных 160ГБ &rarr; 40Гб </li>
+					<li> <b class="label">Сделано:</b> Генерация sitemap XML файлов для 100 000 страниц </li>
+					<li> <b class="label">Сделано:</b> Оптимизация загрузки страниц Google Speed Insights: 100% </li>
+					<!--<li> <b class="label">Сайт:</b> <a href="https://finber.ru">https://finber.ru</a> </li>-->
+				</ul>
+			</main>
+		</article>
+		
+		<article id="cms17">
+			<aside> <a href="18-cms1.jpg"> <img src="18-cms1.jpg"> </a> <p></p> </aside>
+			<main>
+				<h2> CMS17 &mdash; система управление сайтом </h2>
+				<h5> Задача: создать CMS для управления сайтом c элементами блога, портфолио и интернет-магазина </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> брифинг </li>
+					<li class="js-row"> <b class="label ">JS Framework:</b> Vue JS </li>
+					<li> <b class="label">Сделано:</b> Дизайн UI/UX </li>
+					<li> <b class="label">Сделано:</b> Верстка SCSS по БЕМ </li>
+					<li> <b class="label">Сделано:</b> Архитектура Sqlite данных </li>
+					<li> <b class="label">Сделано:</b> Программирование PHP 7.4 </li>
+					<li> <b class="label">Написано с нуля:</b> Sortable.JS, Dropzone.JS, Msg.JS </li>
+				</ul>
+			</main>
+		</article>
+		
+		<article id="mapster">
+			<aside> <a href="01-karta-app.jpg"> <img src="01-karta-app.jpg"> </a> <p></p> </aside>
+			<main>
+				<h2> Mapster &mdash; Объявления на карте </h2>
+				<h5> Задача: спроектировать и создать веб-приложение для размещения объявлений на карте города </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> брифинг </li>
+					<li class="js-row"> <b class="label ">JS Framework:</b> Vue JS </li>
+					<li> <b class="label">Сделано:</b> Проектирование базы данных Sqlite</li>
+					<li> <b class="label">Сделано:</b> Дизайн UI/UX</li>
+					<li> <b class="label">Сделано:</b> Вёрстка HTML5/CSS3</li>
+					<li> <b class="label">Сделано:</b> Программирование Back-End, PHP7 </li>
+					<li> <b class="label">Сделано:</b> Программирование Front-End, JS </li>
+					<li> <b class="label">Подключено:</b> LeafLet JS Lib </li>
+					<li> <b class="label">Подключено:</b> Open Street Maps </li>
+					<li> <b class="label">Подключено:</b> Svg Icons (FontAwesome) </li>
+				</ul>
+			</main>
+		</article>
+		
+		<article>
+			<aside> <a href="11-ritteam-website.jpg"> <img src="11-ritteam-website.jpg"> </a> <p></p> </aside>
+			<main>
+				<h2> Ritteam &mdash; сайт для команды ралли </h2>
+				<h5> Задача: создать одностраничный сайт со сложной анимацией автомобиля </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> Дизайн макет PSD </li>
+					<li class="js-row"> <b class="label ">JS Framework:</b> Vanilla JS </li>
+					<li> <b class="label">Сделано:</b> Вёрстка HTML5/CSS3 </li>
+					<li> <b class="label">Сделано:</b> Анимация автомобиля JS </li>  
+					<li> <b class="label">Сделано:</b> Программирование Back-End, PHP7 </li>
+					<li> <b class="label">Сделано:</b> Мини-CMS, PHP7 </li>
+					<li> <b class="label">Сайт:</b> <a href="https://onepagelove.com/rit-team">https://onepagelove.com/rit-team</a> </li>
+					<li> <b class="label">Сайт:</b> <a href="https://www.awwwards.com/sites/ritteam">https://www.awwwards.com/sites/ritteam</a> </li>
+				</ul>
+			</main>
+		</article>
+		
+		<article>
+			<aside> <a href="12-turbulence-effect.jpg"> <img src="12-turbulence-effect.jpg"> </a> <p></p> </aside>
+			<main>
+				<h2> Turbulence &mdash; визуальные эффекты для сайта кроссовок Fila </h2>
+				<h5> Задача: создать WebGL эффекты для презентационного сайта фирмы Fila </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> брифинг, WenGL референсы </li>
+					<li> <b class="label">Сделано:</b> Программирование WebGL, JS </li>
+					<li class="js-row"> <b class="label ">JS Framework:</b> Vanilla JS </li>
+					<li> <b class="label">Подключено:</b> Pixi.js </li>
+					<li> <b class="label">Подключено:</b> Pixi-filters.js </li>
+					<li> <b class="label">Подключено:</b> Tween.js </li>
+					<li> <b class="label">Сайт:</b> <a href="https://filaexplore.com/">https://filaexplore.com/</a> </li>
+				</ul>
+			</main>
+		</article>
+		
+		<article>
+			<aside> <a href="05-dghome-furniture.jpg"> <img src="05-dghome-furniture.jpg"> </a> <p></p> </aside>
+			<main>
+				<h2> DG-Home &mdash; интернет-магазин дизайнерской мебели </h2>
+				<h5> Задача: сверстать интернет-магазин по макетам </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> Дизайн макеты, 2 большие страницы </li>
+					<li class="js-row"> <b class="label ">JS Framework:</b> Vanilla JS </li>
+					<li> <b class="label">Сделано:</b> Вёрстка HTML5/CSS3 главной страницы </li>
+					<li> <b class="label">Сделано:</b> Вёрстка HTML5/CSS3 карточки товара </li>
+					<li> <b class="label">Сделано:</b> Адаптивная вёрстка </li>
+					<li> <b class="label">Сделано:</b> Transition based JS content slider </li>
+					<li> <b class="label">Сайт:</b> <a href="https://dg-home.ru/">https://dg-home.ru/</a> </li>
+				</ul>
+			</main>
+		</article>
+
+
+		<article>
+			<aside> <a href="rocket.png"> <img src="rocket.png"> </a> <p></p> </aside>
+			<main>
+				<h2> Комплексная анимация ракеты </h2>
+				<h5> Задача: сделать анимацию для игровых торгов </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> дизайн </li>
+					<li> <b class="label">Сделано:</b> JS программирование </li>
+					<li> <b class="label">Сайт:</b> <a href="./rocket/">./rocket/</a> </li>
+				</ul>
+			</main>
+		</article>
+		
+		<article>
+			<aside> <a href="06-knco-dinnerware.jpg"> <img src="06-knco-dinnerware.jpg"> </a> <p></p> </aside>
+			<main>
+				<h2> K. and Co &mdash; интернет-магазин дизайнерской посуды </h2>
+				<h5> Задача: сверстать интернет-магазин для компании из Чикаго (USA)</h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> Дизайн макеты в invisionapp.com, 25 страниц </li>
+					<li> <b class="label">Сделано:</b> Вёрстка HTML5/CSS3 25-и страниц </li>
+					<li> <b class="label">Подключено:</b> <a href="https://ianlunn.github.io/Hover/">https://ianlunn.github.io/Hover/</a> </li>
+					<li> <b class="label">Сайт:</b> <a href="https://kneenandco.com/">https://kneenandco.com/</a> </li>
+				</ul>
+			</main>
+		</article>
+
+		<article id="edbox">
+			<aside> <a href="14-education-marketplace.jpg"> <img src="14-education-marketplace.jpg"> </a> <p></p> </aside>
+			<main>
+				<h2> EdBox &mdash; торговая площадка для образовательных курсов </h2>
+				<h5> Задача: создать MVP для стартапа &mdash; торговую площадку для образовательных курсов </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> Дизайн макеты figma.com </li>
+					<li> <b class="label label-given">Дано:</b> Начальный RestAPI </li>
+					<li class="js-row"> <b class="label ">JS Framework:</b> Vue JS </li>
+					<li> <b class="label">Сделано:</b> Проектирование RestAPI </li>
+					<li> <b class="label">Сделано:</b> Вёрстка HTML5/CSS3 </li>
+					<li> <b class="label">Сделано:</b> Интерфейса для учеников (JS) </li>
+					<li> <b class="label">Сделано:</b> Интерфейса для учителей (JS) </li>
+					<li> <b class="label">Сделано:</b> Редактор карточек для учителей (JS) </li>
+				</ul>
+			</main>
+		</article>
+
+
+		<article id="emailer">
+			<aside> <a href="13-emailer-app.jpg"> <img src="13-emailer-app.jpg"> </a> <p></p> </aside>
+			<main>
+				<h2> EMailer &mdash; интерфейс для электронной почты </h2>
+				<h5> Задача: спроектировать удобный интерфейс для электронной почты, создать функциональный прототип </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> брифинг </li>
+					<li> <b class="label">Сделано:</b> Дизайн UI/UX</li>
+					<li> <b class="label">Сделано:</b> Вёрстка HTML5/CSS3</li>
+					<li> <b class="label">Сделано:</b> Программирование Back-End, PHP7 </li>
+					<li> <b class="label">Сделано:</b> Программирование Front-End, JS </li>
+				</ul>
+			</main>
+		</article>
+
+		<article id="pirogi">
+			<aside> <a href="04-pirogi-shop.jpg"> <img src="04-pirogi-shop.jpg"> </a> <p></p> </aside>
+			<main>
+				<h2> Pirogi &mdash; интернет-магазин для заказа пирогов </h2>
+				<h5> Задача: создать интернет-магазин на котором можно заказать доставку пирогов </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> брифинг </li>
+					<li> <b class="label">Сделано:</b> Проектирование базы данных Sqlite</li>
+					<li> <b class="label">Сделано:</b> Дизайн UI/UX</li>
+					<li> <b class="label">Сделано:</b> Вёрстка HTML5/CSS3</li>
+					<li> <b class="label">Сделано:</b> Программирование Back-End, PHP7 </li>
+					<li> <b class="label">Сделано:</b> Программирование Front-End, JS </li>
+					<li> <b class="label">Сделано:</b> Программирование JS Корзины </li>
+					<li> <b class="label">Сайт:</b> <a href="https://xn--80ajmedstgb4k.xn--p1ai/"> тетяслойка.рф &rarr; </a> </li>
+				</ul>
+			</main>
+		</article>
+
+		<article>
+			<aside> <a href="02-survey-app.jpg"> <img src="02-survey-app.jpg"> </a> <p></p> </aside>
+			<main>
+				<h2> ImageSurvey &mdash; исследование предпочтений </h2>
+				<h5> Задача: создать веб-приложение, большой тестовый опросник с оплачиваемым прохождением, с 600-ми вопросами об изображениях, фильмах, музыки и т.д. </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> брифинг, файлы изображений </li>
+					<li> <b class="label">Сделано:</b> Проектирование базы данных Sqlite</li>
+					<li> <b class="label">Сделано:</b> Дизайн UI/UX</li>
+					<li> <b class="label">Сделано:</b> Вёрстка HTML5/CSS3</li>
+					<li> <b class="label">Сделано:</b> Программирование Back-End, PHP7 </li>
+					<li> <b class="label">Сделано:</b> Программирование JS: запись движений мышки </li>
+					<li> <b class="label">Сделано:</b> Пережатие и загрузка 500-а файлов изображений на хостинг https://cloudinary.com </li>
+					<li> <b class="label">Подключено:</b> Svg Icons (FontAwesome) </li>
+					<li> <b class="label">Подключено:</b> Cloudinary.com </li>
+					<li> <b class="label">Подключено:</b> GitLab </li>
+					<li> <b class="label">Подключено:</b> Docker </li>
+				</ul>
+			</main>
+		</article>
+
+		<article id="kyoto">
+			<aside> <a href="03-highlighter-lib.jpg"> <img src="03-highlighter-lib.jpg"> </a> <p></p> </aside>
+			<main>
+				<h2> Kyoto &mdash; подсветка синтаксиса любого языка программирования </h2>
+				<h5> Задача: создать лёгкую JS библиотеку для подсветки синтаксиса любого языка программирования </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> брифинг </li>
+					<li> <b class="label">Сделано:</b> Придуман принцип подсветки кода, который хорошо работает для многих языков программирования, например для HTML, CSS, JS, PHP </li>
+					<li> <b class="label">Сделано:</b> Парсер цветовых схем *.tmTheme на JS </li>
+					<li> <b class="label">Сделано:</b> Программирование JS </li>
+				</ul>
+			</main>
+		</article>
+
+		<article>
+			<aside> <a href="15-mrt-quiz.jpg"> <img src="15-mrt-quiz.jpg"> </a> <p></p> </aside>
+			<main>
+				<h2> Mrt-quiz &mdash; викторина для специалистов по томографии </h2>
+				<h5> Задача: создать веб-викторину на определение настоящих томограмм и искуственно синтезированных </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> Дизайн макеты </li>
+					<li> <b class="label">Сделано:</b> Проектирование базы данных Sqlite</li>
+					<li> <b class="label">Сделано:</b> Вёрстка HTML5/CSS3</li>
+					<li> <b class="label">Сделано:</b> Программирование Back-End, PHP7 </li>
+					<li> <b class="label">Сделано:</b> Программирование Front-End, JS </li>
+				</ul>
+			</main>
+		</article>
+
+		<article>
+			<aside> <a href="16-company-site.jpg"> <img src="16-company-site.jpg"> </a> <p></p> </aside>
+			<main>
+				<h2> Nvl &mdash; обновить сайт софтверной компании </h2>
+				<h5> Задача: создать новый сайт компании с новым дизайном </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> Дизайн макеты figma.com </li>
+					<li> <b class="label">Сделано:</b> Проектирование базы данных Sqlite</li>
+					<li> <b class="label">Сделано:</b> Вёрстка HTML5/CSS3</li>
+					<li> <b class="label">Сделано:</b> Программирование Back-End, PHP7 </li>
+					<li> <b class="label">Сделано:</b> Программирование Front-End, JS </li>
+				</ul>
+			</main>
+		</article>
+		
+		<article>
+			<aside> <a href="17-pixijs-game.jpg"> <img src="17-pixijs-game.jpg"> </a> <p></p> </aside>
+			<main>
+				<h2> Зверополис &mdash; приключенческая браузерная игра </h2>
+				<h5> Задача: создать изометрическию игру с диалогами, аналог GardenScapes </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> брифинг </li>
+					<li> <b class="label">Сделано:</b> Проектирование базы данных Sqlite</li>
+					<li> <b class="label">Сделано:</b> Вёрстка HTML5/CSS3</li>
+					<li> <b class="label">Сделано:</b> Программирование Back-End, PHP7 </li>
+					<li> <b class="label">Сделано:</b> Программирование Front-End, PixiJS </li>
+				</ul>
+			</main>
+		</article>
+		
+		<article>
+			<aside> <a href="07-leno-mobile-app.jpg"> <img src="07-leno-mobile-app.jpg"> </a> <p></p> </aside>
+			<main>
+				<h2> Leno &mdash; одностраничный сайт для презентации мобильного приложения </h2>
+				<h5> Задача: уложить HTML5 вёрстку на CMS </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> Вёрстка HTML5 </li>
+					<li> <b class="label">Сделано:</b> Программирование Back-End, PHP7 </li>
+					<li> <b class="label">Подключено:</b> WordPress </li>
+				</ul>
+			</main>
+		</article>
+
+		<article>
+			<aside> <a href="08-eatery-cafe.jpg"> <img src="08-eatery-cafe.jpg"> </a> <p></p> </aside>
+			<main>
+				<h2> Eatery &mdash; одностраничный сайт для ресторана </h2>
+				<h5> Задача: уложить HTML5 вёрстку на CMS </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> Вёрстка HTML5 </li>
+					<li> <b class="label">Сделано:</b> Программирование Back-End, PHP7 </li>
+					<li> <b class="label">Подключено:</b> WordPress </li>
+				</ul>
+			</main>
+		</article>
+
+		<article>
+			<aside> <a href="09-sync-mobile-app.jpg"> <img src="09-sync-mobile-app.jpg"> </a> <p></p> </aside>
+			<main>
+				<h2> Sync &mdash; одностраничный сайт для презентации мобильного приложения </h2>
+				<h5> Задача: уложить HTML5 вёрстку на CMS </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> Вёрстка HTML5 </li>
+					<li> <b class="label">Сделано:</b> Программирование Back-End, PHP7 </li>
+					<li> <b class="label">Подключено:</b> WordPress </li>
+					<!--<li> <b class="label">Стоимость:</b> 300$ </li>-->
+				</ul>
+			</main>
+		</article>
+
+		<article>
+			<aside> <a href="10-fusion-saas.jpg"> <img src="10-fusion-saas.jpg"> </a> <p></p> </aside>
+			<main>
+				<h2> Fusion &mdash; одностраничный сайт для SaaS </h2>
+				<h5> Задача: уложить HTML5 вёрстку на CMS </h5>
+				<ul>
+					<li> <b class="label label-given">Дано:</b> Вёрстка HTML5 </li>
+					<li> <b class="label">Сделано:</b> Программирование Back-End, PHP7 </li>
+					<li> <b class="label">Подключено:</b> WordPress </li>
+					<!--<li> <b class="label">Стоимость:</b> 300$ </li>-->
+				</ul>
+			</main>
+		</article>
+		
+	</container>
+		
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none"
+		style="display:block; width:100%; height:100px; margin-bottom:-1px;">
+			<path fill-opacity="1" d="M0,224L30,224C60,224,120,224,180,197.3C240,171,300,117,360,90.7C420,64,480,64,540,74.7C600,85,660,107,720,101.3C780,96,840,64,900,64C960,64,1020,96,1080,90.7C1140,85,1200,43,1260,26.7C1320,11,1380,21,1410,26.7L1440,32L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
+	</svg>
+	
+	<footer>
+		<center>
+			Telegram: @hitokis
+		</center>
+	</footer>
+
+	<script src="matrix.js"></script>
+	<script src="three.js"></script>
+</body>
+</html>

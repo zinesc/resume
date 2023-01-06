@@ -1,0 +1,1 @@
+d:/bin/git/bin/git.exe %*
